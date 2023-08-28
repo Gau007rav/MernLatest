@@ -1,3 +1,5 @@
+//conncetion with database and create an Get Api which have filter and get the data from ExchangeInfo Database(collection name= posts)
+
 import express from "express";
 import cors from "cors"
 import {MongoClient} from "mongodb";
@@ -9,7 +11,6 @@ async function dbConnect(){
     let result = await client.connect();
     let db = result.db(database);
      return db.collection("posts");
-    // let response = await collection.find().toArray();
    
 }
 
@@ -22,12 +23,9 @@ app.get("/",async(req,res)=>{
     
     let limit = Number(req.query.limit) || 10;
     let skip = (page-1)*limit;
-    //let startIndex= (page-1)*limit;
-    //let endIndex = page.limit
+   
     data = await data.find(req.query).skip(skip).limit(limit).toArray();
-    //data = data.slice(startIndex,endIndex);
-    
-    //console.log(data)
+   
     
     res.send(data)
 })

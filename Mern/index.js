@@ -1,3 +1,6 @@
+//create a connection with Databasse and store data in ExchangeInfo database .
+
+
 import fetch from "node-fetch";
 import mongoose from "mongoose";
 

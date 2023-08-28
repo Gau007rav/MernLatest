@@ -1,3 +1,5 @@
+//create a connection with Databasse and store data in IconInfo database .
+
 import fetch from "node-fetch";
 import mongoose from "mongoose";
 
